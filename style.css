@@ -1,57 +1,55 @@
-:root { 
+:root {
   --color-header: #000000;
-  ---color-texto-principal: #FFFFFF;
-  ---color-hover: #70E000;
+  --color-texto: #FFFFFF;
+  --color-hover: #70E000;
   --color-buttons: #38B000;
-  --texto-negro: #000000;
-  --color-description: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(1, 1, 77, 1) 92%);
+  --color-description: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(1,1,77,1) 92%);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mozilla+Headline:wght@200..700&display=swap');
 
+/* Fuente */
 body {
   font-family: 'Inter', sans-serif;
-  /* background: var(--color-description); */
-  color: var(--texto-negro);
-}
-
-h1, h2, h3 {
-  font-family: 'Mozilla Headline', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
 }
 
 /* Header */
 header {
-  width: 100%;
-  background-color: #000000; /* fondo negro */
+  background-color: #000; /* fondo negro */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* relleno interno */
-  box-sizing: border-box; /* asegura que el padding no rompa el ancho */
-  margin: 0; /* elimina espacios en blanco */
+  padding: 1rem 2rem;
 }
 
 .logo img {
   height: 60px;
 }
 
+/* Contenedor del nav */
 nav {
   display: flex;
   align-items: center;
   flex: 1;
-  justify-content: space-between;
+  justify-content: center; /* centra las opciones */
 }
 
+/* Menú centrado */
 nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 
 nav ul li a {
-  color: #FFFFFF;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -61,32 +59,30 @@ nav ul li a:hover {
   color: #38B000; /* verde al hover */
 }
 
-/* .idioma {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-} */
-
+/* Idioma */
 .idioma button {
-  background: none;
+  background-color: #000; /* mismo fondo negro del nav */
   border: none;
-  color: #FFFFFF;
+  color: #fff;
   font-size: 1rem;
   cursor: pointer;
+  margin-left: 2rem;
+  transition: color 0.3s ease;
 }
 
 .idioma button:hover {
-  color: #38B000;
+  color: #38B000; /* verde al hover */
 }
 
+/* Botón Cotizar */
 .btn {
   background-color: #38B000;
-  color: #000000;
+  color: #000;
   padding: 0.6rem 1.2rem;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  margin-left: 0.8rem; /* espacio mínimo respecto al idioma */
+  margin-left: 1rem;
   transition: background-color 0.3s ease;
 }
 
@@ -94,82 +90,85 @@ nav ul li a:hover {
   background-color: #70E000;
 }
 
-/* Descripción estilo carta */
+/* Contenedor de descripción */
 .description {
-  max-width: 1100px;          /* ancho máximo */
-  margin: 2rem auto;          /* espacio arriba/abajo y centrado */
-  padding: 1.5rem;
-  background: var(--color-description); /* gradiente oscuro */
-  color: var(---color-texto-principal);
-  border-radius: 24px;        /* esquinas redondeadas */
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6); /* sombra elegante */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(90deg, #000 0%, #01114d 92%);
+  color: #fff;
+  border-radius: 16px;
+  margin: 2rem auto;
+  max-width: 1200px;
 }
 
+/* Texto */
 .description-text {
   max-width: 500px;
 }
-
 .description-title {
   font-size: 1.8rem;
-  font-weight: bold;
   margin-bottom: 1rem;
 }
-
-.description p {
-  margin-bottom: 1.5rem;
+.description-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.carimg {
-  width: 45%;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-}
-
-.schedule, .contact {
+/* Botones */
+.btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  margin-right: 1rem;
-  border-radius: 5px;
+  border-radius: 6px;
   font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-
 .schedule {
-  background-color: var(--color-buttons);
-  color: var(--texto-negro);
+  background-color: #38B000;
+  color: #000;
 }
-
 .schedule:hover {
-  background-color: var(---color-hover);
+  background-color: #70E000;
 }
-
 .contact {
-  border: 2px solid var(--color-buttons);
-  color: var(--color-buttons);
+  background-color: transparent;
+  border: 2px solid #38B000;
+  color: #38B000;
 }
-
 .contact:hover {
-  background-color: var(---color-hover);
-  color: var(--texto-negro);
+  background-color: #38B000;
+  color: #000;
 }
 
+/* Imagen */
+.description-image {
+  flex: 1; /* ocupa todo el espacio disponible */
+}
+.carimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* llena el espacio sin deformarse */
+  border-radius: 12px;
+}
+
+
+/* Sección Por Qué Elegirnos */
 .whychooseus {
   text-align: center;
   padding: 3rem 2rem;
-  background-color: #f4f4f4; /* fondo claro */
-  color: #000000; /* texto negro por defecto */
+  background-color: #f4f4f4;
 }
 
 .whychoosetitle {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.5rem; /* título más grande */
   margin-bottom: 2rem;
-  color: #000000; /* título en negro */
+  color: #000;       /* texto negro */
 }
 
 .cards {
@@ -180,25 +179,25 @@ nav ul li a:hover {
 }
 
 .card {
-  background-color: #ffffff; /* tarjetas blancas */
+  background-color: #fff;
   border-radius: 10px;
   padding: 2rem 1.5rem;
   width: 250px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  color: #000; /* texto negro */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #000000; /* texto negro dentro de la tarjeta */
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transform: scale(1.05); /* efecto acercar */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2); /* sombra más fuerte */
 }
 
 .icon {
   width: 60px;
   height: 60px;
   margin: 0 auto 1rem;
-  background-color: #38B000; /* círculo verde */
+  background-color: #38B000;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -206,85 +205,71 @@ nav ul li a:hover {
 }
 
 .icon i {
-  color: #ffffff; /* ícono blanco dentro del círculo verde */
+  color: #fff;
   font-size: 1.5rem;
 }
 
-.card h6 {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  font-size: 0.9rem;
-  color: #333333; /* gris oscuro para contraste */
-}
 
 .gallery {
   position: relative;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 2rem auto;
-  text-align: center;
+  overflow: hidden; /* oculta lo que se sale del contenedor */
 }
 
 .gallerytitle {
   font-size: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .galleryimg {
-  position: relative;
+  display: flex; /* todos los grupos en fila */
+  transition: transform 0.6s ease; /* transición lateral */
 }
 
 .group {
-  display: none; /* oculta todos los grupos */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex; /* imágenes en fila dentro del grupo */
   gap: 1rem;
-  opacity: 0;              /* invisible por defecto */
-  transition: opacity 0.6s ease; /* transición suave */
-}
-
-.group.active {
-  display: grid;
-  opacity: 1;              /* visible con fade-in */
+  min-width: 100%; /* cada grupo ocupa todo el ancho */
+  justify-content: center;
 }
 
 .group img {
-  width: 100%;
-  height: 600px;
+  width: 300px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease; /* efecto al pasar el mouse */
+  transition: transform 0.3s ease;
 }
 
 .group img:hover {
-  transform: scale(1.05); /* zoom suave al hover */
+  transform: scale(1.05); /* zoom suave al pasar el cursor */
 }
 
-
-/* Botones */
+/* Botones prev/next */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(56, 176, 0, 0.8);
+  background: rgba(56,176,0,0.8);
   border: none;
   color: #fff;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.prev { left: 15px; }
+.next { right: 15px; }
 
-.prev { left: -60px; }
-.next { right: -60px; }
+.prev:hover, .next:hover { background: #70E000; }
 
-.prev:hover, .next:hover {
-  background: #70E000;
-}
-
+/* Sección Servicios */
 .services {
   text-align: center;
   padding: 3rem 2rem;
@@ -293,14 +278,12 @@ nav ul li a:hover {
 
 .services h1 {
   font-size: 2rem;
-  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .services p {
-  font-size: 1rem;
-  color: #333;
   margin-bottom: 2rem;
+  color: #333;
 }
 
 .services-container {
@@ -310,525 +293,458 @@ nav ul li a:hover {
   flex-wrap: wrap;
 }
 
+/* Cards uniformes */
 .scard {
   background-color: #fff;
   border-radius: 12px;
   padding: 2rem 1.5rem;
   width: 300px;
+  min-height: 420px; /* altura fija para todas */
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  text-align: center;
-
-  display: flex;             /* clave */
-  flex-direction: column;    /* apila contenido vertical */
-  justify-content: space-between; /* empuja los botones al fondo */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* empuja botones al fondo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.scard:hover {
+  transform: scale(1.05); /* zoom suave */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Ícono superior */
+.scard .icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  background-color: #38B000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.scard .icon i {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Lista con íconos */
 .scard ul {
-  list-style: none;   /* elimina los puntos */
-  padding: 0;         /* quita el espacio interno */
-  margin: 0;          /* quita el margen extra */
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
 }
-
 .scard ul li {
+  margin-bottom: 0.6rem;
   position: relative;
-  padding-left: 2rem; /* espacio para el ícono */
-  margin-bottom: 0.8rem;
-  font-size: 0.95rem;
-  color: #333;
+  padding-left: 1.8rem;
 }
-
 .scard ul li::before {
-  content: "\f00c"; /* ícono check de Font Awesome */
-  font-family: "Font Awesome 6 Free";
+  content: "\f00c"; /* Font Awesome check icon */
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  color: #38B000;
   position: absolute;
   left: 0;
   top: 0;
-  color: #38B000;
 }
 
+/* Botones */
 .card-buttons {
   display: flex;
-  justify-content: flex-start; /* o center si quieres centrados */
   gap: 1rem;
   margin-top: 1rem;
 }
-
-.schedule, .appoint {
-  padding: 0.7rem 1.2rem;
-  border-radius: 5px;
+.card-buttons button {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 6px;
   font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-/* Botón verde sólido */
-.schedule {
-  background-color: #38B000;
-  color: #fff;
+  font-size: 1rem;
   border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-
-.schedule:hover {
+.card-buttons .schedule {
+  background-color: #38B000;
+  color: #000;
+}
+.card-buttons .schedule:hover {
   background-color: #70E000;
 }
-
-/* Botón con borde */
-.appoint {
+.card-buttons .appoint {
+  background-color: transparent;
   border: 2px solid #38B000;
   color: #38B000;
-  background-color: transparent;
 }
-
-.appoint:hover {
-  background-color: #70E000;
+.card-buttons .appoint:hover {
+  background-color: #38B000;
   color: #000;
 }
 
+
+/* Contenedor del formulario */
 /* Sección del formulario */
+/* Contenedor del formulario */
 .form-section {
-  background-color: #f9f9f9; /* fondo claro */
-  color: #000;              /* texto oscuro */
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 700px;
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-width: 800px;
   margin: 2rem auto;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
+/* Títulos principales */
 .form-section h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
   color: #000;
 }
 
 .form-section p {
-  margin-bottom: 1.5rem;
-  color: #333;
+  margin-bottom: 2rem;
+  color: #555;
 }
 
-/* Formulario */
-.quote-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.quote-form h3 {
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  color: #000;
-}
-
-/* Etiquetas */
-.quote-form label {
-  margin-top: 1rem;
-  margin-bottom: 0.3rem;
+/* Títulos de secciones */
+.form-section h3,
+.form-section legend {
+  font-size: 1.3rem;
   font-weight: bold;
+  margin: 1.5rem 0 0.8rem;
   color: #000;
+  border: none;   /* elimina borde de fieldset */
+  padding: 0;
 }
 
-/* Inputs y selects */
+/* Inputs uniformes */
 .quote-form input,
 .quote-form select,
 .quote-form textarea {
-  padding: 0.6rem;
-  border: 2px solid #38B000; /* borde verde */
-  border-radius: 5px;
-  background-color: #fff;     /* fondo blanco */
-  color: #000;                /* texto negro */
+  width: 100%;             /* todos ocupan el mismo ancho */
+  height: 48px;            /* altura uniforme */
+  padding: 0.9rem;
+  border: 2px solid #38B000;
+  border-radius: 8px;
   font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;  /* asegura que padding no rompa el tamaño */
+  margin-bottom: 1rem;     /* espacio entre campos */
 }
 
-.quote-form input::placeholder,
-.quote-form textarea::placeholder {
-  color: #666;
+.quote-form textarea {
+  height: 120px; /* altura mayor para notas */
+  resize: none;
 }
 
-.checkbox-group, .radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+  border-color: #70E000;
+  box-shadow: 0 0 6px rgba(56,176,0,0.4);
+  outline: none;
+}
+
+/* Contenedor de selección */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas */
+  gap: 1rem 2rem;                /* espacio entre filas y columnas */
   margin-top: 1rem;
 }
 
-.checkbox-group label,
-.radio-group label {
-  font-size: 0.95rem;
+/* Cada opción */
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
   color: #333;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.checkbox-group input,
-.radio-group input {
-  margin-right: 0.5rem;
+.checkbox-group label:hover {
+  transform: scale(1.03); /* efecto zoom suave */
 }
 
-
-/* Textarea */
-.quote-form textarea {
-  resize: none;
-  min-height: 100px;
+/* Checkbox */
+.checkbox-group input[type="checkbox"] {
+  accent-color: #38B000; /* color verde en el check */
+  width: 18px;
+  height: 18px;
 }
 
-/* Casilla de términos */
-.terms {
+/* Contenedor de radios */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem; /* espacio entre opciones */
   margin-top: 1rem;
-  text-align: left;
-  font-size: 0.9rem;
+}
+
+/* Cada opción */
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.radio-group label:hover {
+  transform: scale(1.03); /* efecto zoom suave */
+}
+
+/* Radio */
+.radio-group input[type="radio"] {
+  accent-color: #38B000; /* color verde corporativo */
+  width: 18px;
+  height: 18px;
+}
+
+/* Notas adicionales */
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 0.9rem;
+  border: 2px solid #38B000;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: none;
+  margin-top: 1rem;
+}
+
+textarea:focus {
+  border-color: #70E000;
+  box-shadow: 0 0 6px rgba(56,176,0,0.4);
+  outline: none;
+}
+
+
+/* Términos y condiciones sin fieldset */
+/* Contenedor de consentimiento */
+.consent {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  font-size: 0.95rem;
   color: #333;
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
-.terms input {
-  margin-top: 0.2rem;
+/* Checkbox */
+.consent input[type="checkbox"] {
+  accent-color: #38B000; /* verde corporativo */
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
 }
+
+.consent a {
+  color: #000;              /* negro por defecto */
+  text-decoration: none;    /* sin subrayado */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.consent a:hover {
+  color: #38B000;           /* verde corporativo al hover */
+}
+
+
+/* Texto */
+.consent label {
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.consent label:hover {
+  color: #38B000; /* verde al pasar el cursor */
+}
+
 
 /* Botón enviar */
 .submit-btn {
-  margin-top: 2rem;
-  padding: 0.9rem;
-  background-color: #38B000; /* verde sólido */
+  background-color: #38B000;
+  color: #000;
+  padding: 1rem;
+  font-size: 1.1rem;
   border: none;
-  color: #fff;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%; /* botón ocupa todo el ancho */
 }
 
 .submit-btn:hover {
-  background-color: #70E000; /* verde más claro al hover */
-  color: #000;
+  background-color: #70E000;
 }
 
-footer {
-  background-color: #111; /* fondo oscuro elegante */
+
+
+
+/* Footer */
+.footer {
+  background-color: #111;
   color: #fff;
-  padding: 2rem 1rem;
-  font-family: 'Inter', sans-serif;
+  padding: 3rem 1.5rem; /* más espacio interno */
 }
 
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem; /* espacio entre columnas */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-col {
-  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* espacio entre elementos dentro de cada columna */
 }
 
 .footer-logo {
   width: 160px;
   margin-bottom: 1rem;
-  border-radius: 8px;
 }
 
-.footer-col h3 {
-  color: #38B000; /* verde consistente con tu branding */
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+.footer h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #38B000; /* verde corporativo */
 }
 
-.footer-col ul {
+.footer p {
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.footer ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-col ul li {
-  margin: 0.5rem 0;
+.footer ul li {
+  margin-bottom: 0.6rem;
 }
 
-.footer-col ul li a {
+.footer ul li a {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-col ul li a:hover {
-  color: #70E000; /* verde más claro al hover */
+/* Columna de enlaces rápidos */
+.footer-col.quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem; /* espacio entre cada enlace */
+}
+
+.footer-col.quick-links h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #38B000; /* verde corporativo */
+}
+
+.footer-col.quick-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col.quick-links ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-col.quick-links ul li a {
+  color: #fff; /* blanco por defecto */
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-col.quick-links ul li a:hover {
+  color: #38B000; /* verde al hover */
+  transform: translateX(5px); /* pequeño movimiento lateral */
+}
+
+
+
+.footer ul li a:hover {
+  color: #38B000;
 }
 
 .social-icons {
-  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .social-icons a {
-  color: #38B000;
-  margin-right: 10px;
-  font-size: 1.5rem;
-  text-decoration: none;
+  font-size: 1.4rem;
+  color: #fff;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #70E000;
-}
-
-/* Texto inferior */
-footer p {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-top: 1rem;
-}
-
-footer p a {
   color: #38B000;
-  text-decoration: none;
 }
 
-footer p a:hover {
-  color: #70E000;
+.footer-rights {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #333; /* línea divisoria superior */
+  padding-top: 1rem;
 }
 
-/* Estilos base (desktop) ya los tienes, aquí añadimos ajustes para móviles */
+/* Responsivo */
 @media (max-width: 768px) {
-  /* Header */
-  header nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+  .footer-container {
+    grid-template-columns: 1fr; /* una sola columna en móvil */
     text-align: center;
   }
-  header nav {
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-container {
     flex-direction: column;
     align-items: center;
-  }
-  .idioma {
-    margin-top: 0.5rem;
-  }
-
-  /* Descripción */
-  .description {
-    flex-direction: column;
     text-align: center;
-  }
-  .description-text {
-    max-width: 100%;
-  }
-  .carimg {
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  /* Why Choose Us */
-  .cards {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .card {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Galería */
-  .galleryimg {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .group {
-    grid-template-columns: 1fr;
-  }
-  .gallery img {
-    width: 100%;
-    height: auto;
-  }
-
-  /* Servicios */
-  .services-container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .scard {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Formulario */
-  .quote-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .quote-form input,
-  .quote-form select,
-  .quote-form textarea {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.8rem;
-  }
-  .checkbox-group, .radio-group {
-    gap: 0.8rem;
-  }
-  .submit-btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-  }
-
-  /* Footer */
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
   }
   .footer-col {
-    width: 100%;
-  }
-  .social-icons {
-    justify-content: center;
+    flex: 1 1 100%;
   }
 }
-@media (max-width: 440px) {
-  body {
-    font-size: 16px;
-    line-height: 1.4;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* evita scroll lateral */
-  }
 
-  /* Header */
-  header nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  .btn {
-    width: 100%;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
-
-  /* Descripción */
-  .description {
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-  }
-  .carimg {
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  /* Why Choose Us */
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr; /* cada tarjeta ocupa todo el ancho */
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-  .card {
-    width: 100%;
-    text-align: left;   /* texto alineado a la izquierda */
-    padding: 1.5rem;
-  }
-  .icon {
-    margin: 0 0 1rem 0; /* ícono alineado al inicio */
-  }
-
-  /* Galería */
-  .galleryimg {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 0.5rem;
-  }
-  .group img {
-    width: 100%;
-    height: auto;
-    max-height: 180px;
-    object-fit: cover;
-    border-radius: 6px;
-  }
-  .prev, .next {
-    width: 40px;
-    height: 40px;
-    font-size: 1.4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(56,176,0,0.8);
-    border-radius: 50%;
-    z-index: 10;
-  }
-  .prev { left: 10px; }
-  .next { right: 10px; }
-
-  /* Servicios */
-  .services-container {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0 1rem;
-  }
-  .scard {
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  /* Formulario */
-  .form-section {
-    padding: 1rem;
-    margin: 1rem;
-  }
-  .quote-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .quote-form input,
-  .quote-form select,
-  .quote-form textarea {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.8rem;
-  }
-  .checkbox-group, .radio-group {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  .terms {
-    display: flex;
-    flex-direction: row;   /* checkbox y texto alineados */
-    align-items: flex-start;
-    gap: 0.5rem;
-    width: 100%;
-    font-size: 0.9rem;
-    line-height: 1.3;
-    text-align: left;
-  }
-  .terms input {
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-  }
-  .submit-btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-  }
-
-  /* Footer */
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-    padding: 1rem;
-  }
-  .footer-col {
-    width: 100%;
-  }
-  .social-icons {
-    justify-content: center;
-    gap: 1rem;
-  }
+@media (max-width: 480px) {
+  .cards { grid-template-columns: 1fr; }
+  .card { width: 100%; text-align: left; }
+  .galleryimg { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .group img { height: 180px; }
+  .submit-btn { width: 100%; }
 }

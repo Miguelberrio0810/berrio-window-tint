@@ -1,26 +1,24 @@
-const groups = document.querySelectorAll(".group");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+const gallery = document.querySelector('.galleryimg');
+const groups = document.querySelectorAll('.group');
+let currentIndex = 0;
 
-let index = 0;
-
-// Mostrar primer grupo
-groups[index].classList.add("active");
-
-function showGroup(i) {
-  groups.forEach(g => g.classList.remove("active"));
-  groups[i].classList.add("active");
+function showGroup(index) {
+  if (index < 0) index = groups.length - 1;
+  if (index >= groups.length) index = 0;
+  currentIndex = index;
+  gallery.style.transform = `translateX(-${index * 100}%)`;
 }
 
-prevBtn.addEventListener("click", () => {
-  index = (index - 1 + groups.length) % groups.length;
-  showGroup(index);
+document.querySelector('.prev').addEventListener('click', () => {
+  showGroup(currentIndex - 1);
+});
+document.querySelector('.next').addEventListener('click', () => {
+  showGroup(currentIndex + 1);
 });
 
-nextBtn.addEventListener("click", () => {
-  index = (index + 1) % groups.length;
-  showGroup(index);
-});
+// Inicial
+showGroup(0);
+
 
 // Diccionario de traducciones
 const translations = {
@@ -30,6 +28,7 @@ const translations = {
     contacto: "Contacto",
     cotizar: "Cotizar",
     llamanos: "Llámanos",
+    schedule: "Agenda tu cita",
     descripcionTitle: "Te presentamos Berrío Window Tint, una empresa nueva en Gainesville, Florida, dedicada al tinte profesional de ventanas para vehículos, residencias y espacios comerciales.",
     descripcionText: "Nuestro propósito es simple: ayudarte a vivir y conducir con mayor comodidad, seguridad y privacidad.",
     whychooseus: "Por Qué Elegirnos",
@@ -63,6 +62,7 @@ const translations = {
     optProt: "Película de protección de pintura",
     optRes: "Película para ventanas residenciales",
     optCom: "Película comercial para ventanas",
+    personalInfo: "Datos personales",
     nombre: "Nombre",
     apellido: "Apellido",
     email: "Correo electrónico",
@@ -116,6 +116,7 @@ const translations = {
     contacto: "Contact",
     cotizar: "Get a Quote",
     llamanos: "Call Us",
+    schedule: "Schedule a meeting",
     descripcionTitle: "Introducing Berrío Window Tint, a new company in Gainesville, Florida, dedicated to professional window tinting for vehicles, residences, and commercial spaces.",
     descripcionText: "Our purpose is simple: to help you live and drive with greater comfort, safety, and privacy.",
     whychooseus: "Why Choose Us",
@@ -149,6 +150,7 @@ const translations = {
     optProt: "Paint protection film",
     optRes: "Residential window film",
     optCom: "Commercial window film",
+    personalInfo: "Personal Information",
     nombre: "First Name",
     apellido: "Last Name",
     email: "Email",
@@ -228,6 +230,7 @@ document.querySelector(".idioma button").addEventListener("click", () => {
 });
 
 function changeLanguage(lang) {
+  // Cambiar textos normales
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang][key]) {
@@ -235,8 +238,17 @@ function changeLanguage(lang) {
     }
   });
 
+  // Cambiar placeholders
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (translations[lang][key]) {
+      el.setAttribute("placeholder", translations[lang][key]);
+    }
+  });
+
   // Cambiar el texto del botón
   document.querySelector(".idioma button").textContent = lang === "es" ? "🌐EN" : "🌐ES";
 }
+
 
 

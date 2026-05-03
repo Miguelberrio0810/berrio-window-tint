@@ -275,23 +275,23 @@ nav .cotizar-btn:hover {
   transition: transform 0.6s ease;
 }
 
-.group {
-  display: flex;
-  gap: 0.5rem;
-  min-width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 0 60px;        /* espacio para los botones */
-  box-sizing: border-box;
-}
-
 .group img {
-  flex: 1;                /* las 3 imágenes se reparten el espacio */
-  min-width: 0;           /* evita desbordamiento */
-  height: 200px;
+  flex: 1;
+  min-width: 0;
+  height: 300px;      /* ← aumenta este valor, estaba en 200px */
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease;
+}
+
+.group {
+  padding: 0 60px;
+  gap: 1rem;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .group img:hover {
@@ -967,3 +967,14 @@ textarea:focus {
   .social-icons a:hover {
     color: #38B000;
   }
+
+  @media (min-width: 1024px) {
+  .group img {
+    height: 380px;    /* más grandes en pantallas grandes */
+  }
+
+  .group {
+    padding: 0 70px;
+    gap: 1.5rem;
+  }
+}
